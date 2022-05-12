@@ -1,4 +1,4 @@
-﻿using InsertionSort;
+﻿using SelectionSort;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -70,26 +70,26 @@ class Program
             Console.Write("Уведiть бажану кiлькiсть елементiв в масивi: ");
             int count = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Уведiть кiлькiсть частин (потокiв), на якi буде подiлений вхiдний масив:: ");
-            int partsCount = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Уведiть кiлькiсть частин (потокiв), на якi буде подiлений вхiдний масив: ");
+            //int partsCount = Convert.ToInt32(Console.ReadLine());
 
 
             int[] newArray = CreatingArray(count);
-            ArrayWritter(newArray, "Вхідний масив:");
+            //ArrayWritter(newArray, "Вхідний масив:");
 
             var sw = new Stopwatch();
-            //sw.Start();
-            //int[] outputArray = SelectionSort(newArray);
-            //sw.Stop();
-
             sw.Start();
-            int[] result = ParallelSelectionSort.PSelectionSort(newArray, partsCount);
+            int[] outputArray = SelectionSort(newArray);
             sw.Stop();
 
-            ArrayWritter(result, "Впорядкований масив:");
+            //sw.Start();
+            //int[] result = ParallelSelectionSort.PSelectionSort(newArray, partsCount);
+            //sw.Stop();
+
+            //ArrayWritter(result, "Впорядкований масив:");
 
             Console.Write("Кiлькiсть елементiв у масивi: " + count + ". ");
-            Console.Write("Кiлькість потокiв: " + partsCount + ". ");
+            //Console.Write("Кiлькість потокiв: " + partsCount + ". ");
             Console.Write("Час виконання алгоритму: " + sw.ElapsedMilliseconds + " мс.");
             Console.WriteLine();
             Console.ReadLine();

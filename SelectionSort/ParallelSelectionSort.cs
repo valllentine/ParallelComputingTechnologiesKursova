@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsertionSort
+namespace SelectionSort
 {
     public class ParallelSelectionSort
     {
